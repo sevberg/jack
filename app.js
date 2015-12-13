@@ -10,6 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
+// Do setup
+var emjdb = require("./my_modules/mysql");
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -22,8 +25,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Add globals
+app.use( function(req, res, next){
+  req.emjdb = emjdb;
+
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/calljack', function(req, res){ res.render('calljack') });
+app.use('/register_request', require("./routes/register_request"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

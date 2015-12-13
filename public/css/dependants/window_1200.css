@@ -1,0 +1,61 @@
+﻿@media (max-width:1200px){
+
+    /*----------------------------------------------------------------------*/
+    /* Basic HTML Elements */
+    body{
+        background-image:url("../../pics/DarkWood_Faces_v3.png")
+    }
+
+
+    /*----------------------------------------------------------------------*/
+    /* Nav Bar Properties*/
+
+    .navbar-text{
+        font-size: 28px;
+    }
+
+    .navbar-brand img {
+        height:1.9em;
+    }
+
+    #behind_nav{
+        height:50px;
+    }
+
+
+    /*----------------------------------------------------------------------*/
+    /*Main Text Properties*/
+
+    .qtext{
+        font-size:40px;
+    }
+
+    .atext{
+        font-size:25px;
+    }
+
+    .ctext {
+        font-size: 20px;
+    }
+    /*----------------------------------------------------------------------*/
+    /*Main question and Content Properties*/
+
+    .question{
+        height:400px;
+        padding-top:200px;
+    }
+
+    .answer{
+        height:50px;
+    }
+
+    .content{
+    }
+    
+    /*----------------------------------------------------------------------*/
+    /*Special Content Properties*/
+    #logo {
+
+    }
+
+}

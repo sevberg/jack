@@ -1,0 +1,125 @@
+﻿/*----------------------------------------------------------------------*/
+/* Basic HTML Elements */
+body{
+    min-width:500px;
+    background:url("../pics/DarkWood_Faces_v3.png") center top fixed;
+    background-size: 100%;
+}
+
+
+/*----------------------------------------------------------------------*/
+/* Nav Bar Properties*/
+
+.navbar-text{
+    font-family: "Bevan", cursive;
+    font-size: 36px;
+    text-shadow:
+        -1px -1px 0 #D0D0D0,  
+        1px -1px 0 #D0D0D0,
+        -1px 1px 0 #D0D0D0,
+        1px 1px 0 #D0D0D0;
+}
+
+.navbar-brand img {
+    height:2.2em;
+}
+
+#behind_nav{
+    height:0px;
+}
+
+
+/*----------------------------------------------------------------------*/
+/*Main Text Properties*/
+
+.qtext{
+    font-family: "Bevan", cursive;
+    font-size: 50px;
+    color:#fff;
+    text-shadow:
+        -1px -1px 0 #222222,  
+        1px -1px 0 #222222,
+        -1px 1px 0 #222222,
+        1px 1px 0 #222222;
+}
+
+.atext{
+    font-family: "Bevan", cursive;
+    font-size: 30px;
+    color:#e40000;
+    text-shadow:
+        -1px -1px 0 #D0D0D0,  
+        1px -1px 0 #D0D0D0,
+        -1px 1px 0 #D0D0D0,
+        1px 1px 0 #D0D0D0;
+}
+
+.ctext{
+    font-family:"Open Sans", sans-serif;
+    font-size: 25px;
+}
+
+/*----------------------------------------------------------------------*/
+/*Main Section Properties*/
+
+.question{
+    height:650px;
+    background: url("../pics/divider.png") top repeat-x;
+    margin-top:-10px;
+    padding-top:325px;
+}
+
+.answer{
+    height:70px;
+    padding-top:10px;
+    background:url("../pics/answer_bg.png") top repeat-x;
+}
+
+.content{
+    background: url("../pics/WhiteBackground_sliver.png") repeat-x;
+    background-size:contain;
+    background-position-y:50%;
+    background: -moz-radial-gradient(circle, white 60%, #C0C0C0 120%); /* For Firefox 3.6 to 15 */
+    padding:40px;
+}
+
+/*----------------------------------------------------------------------*/
+/*Special Content Properties*/
+
+#content_3{
+    
+}
+#content_4{
+    text-align:center;
+    font-family:"Open Sans", sans-serif;
+    font-size: 20px;
+}
+
+li {
+    border:none;
+}
+a{
+    border:none;
+}
+
+/*Calljack Page*/
+#answer_callJack{
+    background:none;
+    color:white;
+    text-align:center;
+    font-family:"Open Sans", sans-serif;
+    font-size: 20px;
+}
+
+
+
+.selected img{
+    border-radius:5px;
+    border:2px solid black;
+    border-top:none;
+}
+
+.radio{
+    margin-left:20px;
+    display:block;
+}
