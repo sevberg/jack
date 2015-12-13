@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var register_request = require('./routes/register_request');
+var check_requests = require('./routes/check_requests');
 
 var app = express();
 
@@ -25,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // Add globals
 app.use( function(req, res, next){
   req.emjdb = emjdb;
@@ -33,10 +35,13 @@ app.use( function(req, res, next){
   next();
 });
 
+// Do Routing
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/calljack', function(req, res){ res.render('calljack') });
-app.use('/register_request', require("./routes/register_request"));
+app.use('/register_request', register_request);
+app.use('/check_requests', check_requests)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
