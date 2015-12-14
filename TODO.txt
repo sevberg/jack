@@ -1,0 +1,6 @@
+# mailgun #
+###########
+
+resister a domain
+ - go to mailgun.com and follow instructions
+ - will need godaddy login info
