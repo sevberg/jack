@@ -11,8 +11,6 @@ var checkVal = function( val ){
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-	var tmp = 'INSERT INTO requests (NAME, CONTACT, ADDRESS, JOB_TYPE, DESCRIPTION) VALUES (';
-
 	// Check all inputs
 	if(!checkVal(req.body.name)) return res.send("fail");
 	if(!checkVal(req.body.contact)) return res.send("fail");
@@ -20,12 +18,15 @@ router.post('/', function(req, res, next) {
 	if(!checkVal(req.body.job_type)) return res.send("fail");
 	if(!checkVal(req.body.job_desc)) return res.send("fail");
 
+	// Create query
+	var tmp = 'INSERT INTO requests (name, contact, address, job_type, description, ip_addr) VALUES (';
 
 	tmp += "\"" + req.body.name + "\", ";
 	tmp += "\"" + req.body.contact + "\", ";
 	tmp += "\"" + req.body.job_location + "\", ";
 	tmp += "\"" + req.body.job_type + "\", ";
-	tmp += "\"" + req.body.job_desc + "\");";
+	tmp += "\"" + req.body.job_desc + "\", ";
+	tmp += "\"" + req.connection.remoteAddress + "\");";
 	
 	console.log(tmp);
 

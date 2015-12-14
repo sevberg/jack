@@ -13,12 +13,12 @@ var WriteRequest = function(data){
 
 
 	var r = '<div class="row">';
-	r += '<h3>' + data.NAME + '  -  ' + data.JOB_TYPE + '</h3>';
-	r += '<p>Address: ' + data.ADDRESS + '</p><br/>'; 
-	r += '<p>Contact: ' + data.CONTACT + '</p><br/>'; 
-	r += '<p>Created: ' + data.CREATED + '</p><br/>'; 
-	r += '<p>IP Addr: ' + data.IP_ADDR + '</p><br/>'; 
-	r += '<p>Details: ' + data.DESCRIPTION + '</p><br/>';
+	r += '<h3>' + data.name + '  -  ' + data.job_type + '</h3>';
+	r += '<p>Address: ' + data.address + '</p><br/>'; 
+	r += '<p>Contact: ' + data.contact + '</p><br/>'; 
+	r += '<p>Created: ' + data.created + '</p><br/>'; 
+	r += '<p>IP Addr: ' + data.ip_addr + '</p><br/>'; 
+	r += '<p>Details: ' + data.description + '</p><br/>';
 	r += '</div>';
 
 	r += '<p>-----------------------------------------------------------</p>' 
@@ -29,10 +29,10 @@ var WriteRequest = function(data){
 
 router.post('/', function( req, res){
 	if( req.body.maxTime != -1 ){
-		var q = "SELECT * FROM requests WHERE CREATED >= CURRENT_TIMESTAMP - INTERVAL TIME-INTERVAL MINUTE ORDER BY CREATED DESC;"
+		var q = "SELECT * FROM requests WHERE created >= CURRENT_TIMESTAMP - INTERVAL TIME-INTERVAL MINUTE ORDER BY CREATED DESC;"
 		q = q.replace("TIME-INTERVAL", req.body.maxTime);
 	} else {
-		var q = "SELECT * FROM requests ORDER BY CREATED DESC;";
+		var q = "SELECT * FROM requests ORDER BY created DESC;";
 	}
 
 	req.emjdb.query(q, function(err, sql){
