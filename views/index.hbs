@@ -168,7 +168,7 @@
         <div class="col-lg-12">
             <p class="ctext text-center">
                 This is a work in progress<br />
-                For the time being, if you have a task:
+                For the time being, if you have a task, get it done here:
             </p>
 
              <form class="form-inline text-center" role="form" method="post" action="/register_request">
@@ -187,7 +187,16 @@
                         <textarea class="form-control" rows="5" id="job_desc-input" placeholder="What can Jack do for you?" maxlength="132"></textarea>
                         <div class="btn-group-vertical" role="group">
                             <div class="input-group" style="text-align:left">
-                                <div class="radio">
+                                <!--attempt at creating a drop down menu for the database-->
+                                <label class="control-label">Want to</label>
+                                <select class="form-control">
+                                <option>General Labor</option>
+                                <option>Cleaning</option>
+                                <option>Personal</option>
+                                <option>Errands</option>
+                                <option>Roadside Assistance</option>
+                                </select>
+                                <!--<div class="radio">
                                     <label>
                                         <input type="radio" name="optionsRadios-input" id="optionsRadios1" value="General" checked>
                                         General Labor
@@ -216,7 +225,7 @@
                                         <input type="radio" name="optionsRadios-input" id="optionsRadios5" value="Roadside Assistance">
                                         Roadside Assistance
                                     </label>
-                                </div><br />
+                                </div><br />-->
                             </div>
                         </div>
                     </div>
