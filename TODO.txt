@@ -4,3 +4,10 @@
 resister a domain
  - go to mailgun.com and follow instructions
  - will need godaddy login info
+
+
+# Web Experience #
+##################
+Request Registration Error
+- When registering requests they all come in as a 'General' job type
+- Will likely need to change the radio selection area to a bootstrap dropdown
