@@ -86,13 +86,13 @@
                         data['job_type'] = $('#optionsRadios2').val();
                     } 
                     else if($('#optionsRadios3').attr("checked", "checked")){
-                        data['job_type'] = $('#optionsRadios2').val();
+                        data['job_type'] = $('#optionsRadios3').val();
                     } 
                     else if($('#optionsRadios4').attr("checked", "checked")){
-                        data['job_type'] = $('#optionsRadios2').val();
+                        data['job_type'] = $('#optionsRadios4').val();
                     } 
                     else if($('#optionsRadios5').attr("checked", "checked")){
-                        data['job_type'] = $('#optionsRadios2').val();
+                        data['job_type'] = $('#optionsRadios5').val();
                     } 
 
                     $.post('/register_request', data, function(res){
