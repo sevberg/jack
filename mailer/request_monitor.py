@@ -5,17 +5,16 @@ import requests
 from time import sleep
 from datetime import datetime as dt
 
+############### Send msg Function ###############
 def send_message(msg, sub):
 
-    print( "sending notification - %s" % str( dt.now() ) )
     return requests.post(
         "https://api.mailgun.net/v3/sandboxb7cc3744e4cd46aab37a90c5946dd4a4.mailgun.org/messages",
         auth=("api", "key-40fec02026b38ca2fa87737c340541c8"),
         data={"from": "EMJ Request Notifier <postmaster@sandboxb7cc3744e4cd46aab37a90c5946dd4a4.mailgun.org>",
-              "to": "Severin Ryberg <sevberg129@gmail.com>",
+              "to": "EMJ Master <dryberg777@gmail.com>",
               "subject": sub,
               "text": msg})
-
 
 ############# Setup mysql connection ##############
 
@@ -67,11 +66,10 @@ while(True):
 		csr.execute( q )
 
 	## Sleep for 5 minutes
-	sleep(300)
+	sleep(3)
 
 print ( "Exiting main loop...")
 
 # Close down connections
 csr.close()
 cnx.close()
-
