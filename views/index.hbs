@@ -167,7 +167,7 @@
         <div class="col-lg-12">
             <p class="ctext text-center">
                 This is a work in progress<br />
-                For the time being, if you have a task:
+                For the time being, if you have a task, just ask:
             </p>
 
             <div class="row">
@@ -191,12 +191,12 @@
                                 <input type="text" class="form-control" id="req-address" placeholder="Enter job address">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="req-contact">Contact:</label>
+                        <!--div class="form-group">
+                            <label class="control-label col-sm-3" for="req-contact">Preferred Contact:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="req-contact" placeholder="Enter your phone number">
+                                <input type="text" class="form-control" id="req-contact" placeholder="Phone Number if preferred">
                             </div>
-                        </div>
+                        </div-->
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="req-job_type">Job Type:</label>
                             <div class="col-sm-9">
@@ -229,8 +229,7 @@
                     var val_name = new RegExp("^[a-zA-Z ]{0,100}$");
                     var val_email = new RegExp("^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$");
                     var val_address = new RegExp("^[a-zA-Z0-9-,. ]{0,150}$");
-                    var val_contact = new RegExp("^[0-9-() ]{0,15}");
-
+                  
                     var validate = function(dom, rx){
                         if( !rx.test(dom.val()) || dom.val() == "") {
                             dom.closest('.form-group').addClass("has-error");
@@ -248,14 +247,12 @@
                         formErrors += validate($('#req-name'), val_name);
                         formErrors += validate($('#req-address'), val_address);
                         formErrors += validate($('#req-email'), val_email);
-                        formErrors += validate($('#req-contact'), val_contact);
-
+                        
                         if( !formErrors ){
 
                         var data = {};
                             data['name'] = $('#req-name').val();
-                            data['contact'] = $('#req-contact').val();
-                            data['email'] = $('#req-email').val();
+                            data['contact'] = $('#req-email').val();
                             data['job_location'] = $('#req-address').val();
                             data['job_desc'] = $('#req-description').val();
                             data['job_type'] = $('#req-job_type').find("option:selected").text();
@@ -275,9 +272,9 @@
             </div>
 
             <p class="ctext text-center">
-                Imagine the possibilities if this was a complete app<br />
-                Scores of people ready and willing to help<br />
-                Responsive in real time<br />
+                Imagine the possibilities if this was a complete app.<br />
+                Scores of people ready and willing to help.<br />
+                Responsive in real time.<br />
                 Instantly Useful.
             </p>
         </div>
