@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var register_request = require('./routes/register_request');
+var register = require('./routes/register');
 var check_requests = require('./routes/check_requests');
 
 var app = express();
@@ -40,7 +40,7 @@ app.use( function(req, res, next){
 app.use('/', routes);
 app.use('/users', users);
 app.use('/calljack', function(req, res){ res.render('calljack') });
-app.use('/register_request', register_request);
+app.use('/register', register);
 app.use('/check_requests', check_requests)
 
 // catch 404 and forward to error handler
