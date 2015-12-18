@@ -1,8 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-var checkVal = function( val ){
-	if( val == "" ){
+var checkVal = function( val, rx ){
+
+	var RX = new RegExp(rx);
+
+	if( val == ""){
+		return false;
+	}
+	if(typeof val == 'undefined'){
+		return false;
+	}
+	if( !RX.test(val) ){
 		return false;
 	}
 
@@ -11,10 +20,11 @@ var checkVal = function( val ){
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
+
 	// Check all inputs
-	if(!checkVal(req.body.name)) return res.send("fail");
-	if(!checkVal(req.body.contact)) return res.send("fail");
-	if(!checkVal(req.body.job_location)) return res.send("fail");
+	if(!checkVal(req.body.name, "^[a-zA-Z ]{0,100}$")) return res.send("fail");
+	if(!checkVal(req.body.contact, "^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$")) return res.send("fail");
+	if(!checkVal(req.body.job_location, "^[a-zA-Z0-9-,. ]{0,150}$")) return res.send("fail");
 	if(!checkVal(req.body.job_type)) return res.send("fail");
 	if(!checkVal(req.body.job_desc)) return res.send("fail");
 
@@ -42,6 +52,7 @@ router.post('/', function(req, res, next) {
 
 	});
 	
+
 });
 
 module.exports = router;
