@@ -12,14 +12,14 @@ def send_message(msg, sub):
         "https://api.mailgun.net/v3/sandboxb7cc3744e4cd46aab37a90c5946dd4a4.mailgun.org/messages",
         auth=("api", "key-40fec02026b38ca2fa87737c340541c8"),
         data={"from": "EMJ Request Notifier <postmaster@sandboxb7cc3744e4cd46aab37a90c5946dd4a4.mailgun.org>",
-              "to": "EMJ Master <sevberg129@gmail.com>",
+              "to": "EMJ Master <dryberg87@gmail.com>",
               "subject": sub,
               "text": msg})
 
 ############# Setup mysql connection ##############
 
-cnx = mc.connect(	user='emj', 
-					password='password',
+cnx = mc.connect(   user='emj', 
+                    password='password',
                     host='127.0.0.1',
                     database='everymanjack')
 
@@ -34,7 +34,7 @@ while(True):
 
 	################################################
 	## Action for Requests table
-    ################################################
+        ################################################
 
 	## Check the database for unnotified requests
 	q = "select * from requests where notified=False;"
@@ -72,7 +72,7 @@ while(True):
 
 	################################################
 	## Action for Help table
-    ################################################
+        ################################################
     
 	## Check the database for unnotified requests
 	q = "select * from help where notified=False;"
@@ -108,7 +108,7 @@ while(True):
 		csr.execute( q )
 
 	## Sleep for 5 minutes
-	sleep(3)
+	sleep(300)
 
 print ( "Exiting main loop...")
 
