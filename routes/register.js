@@ -28,21 +28,17 @@ router.post('/help', function(req, res, next) {
 	if(!checkVal(req.body.desc, "^.{0,500}$")) return res.send("fail");
 
 
-	console.log("now I should do something");
-
-	/*
+	
 	// Create query
-	var tmp = 'INSERT INTO requests (name, contact, address, job_type, description, ip_addr) VALUES (';
+	var tmp = 'INSERT INTO help (name, email, purpose, description, ip_addr) VALUES (';
 
 	tmp += "\"" + req.body.name + "\", ";
 	tmp += "\"" + req.body.contact + "\", ";
-	tmp += "\"" + req.body.job_location + "\", ";
-	tmp += "\"" + req.body.job_type + "\", ";
-	tmp += "\"" + req.body.job_desc + "\", ";
+	tmp += "\"" + req.body.type + "\", ";
+	tmp += "\"" + req.body.desc + "\", ";
 	tmp += "\"" + req.connection.remoteAddress + "\");";
 	
-	console.log(tmp);
-
+    
 	req.emjdb.query( tmp, function(err) {
 
 		console.log(err);
@@ -54,9 +50,7 @@ router.post('/help', function(req, res, next) {
 		return res.send("success");
 
 	});
-	*/
-	return res.send("success");
-
+	
 });
 
 
