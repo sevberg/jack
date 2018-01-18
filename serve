@@ -1,0 +1,3 @@
+#!/bin/bash
+
+uwsgi --ini serve.ini --manage-script-name --mount /vsa_server=server:app
