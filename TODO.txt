@@ -11,3 +11,9 @@ resister a domain
 Request Registration Error
 - When registering requests they all come in as a 'General' job type
 - Will likely need to change the radio selection area to a bootstrap dropdown
+
+
+# Server Behavior #
+###################
+Fix server timezone settings
+- AWS deffinitely has a way to do this

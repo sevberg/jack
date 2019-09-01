@@ -3,6 +3,10 @@
 /node_modules/
 /logs/
 
+# file types #
+# ############
+*.db
+
 # ipython stuff #
 #################
 /.ipynb_checkpoints/

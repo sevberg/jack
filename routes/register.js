@@ -18,8 +18,44 @@ var checkVal = function( val, rx ){
 	return true;
 }
 
-/* GET home page. */
-router.post('/', function(req, res, next) {
+// Register a help submission
+router.post('/help', function(req, res, next) {
+
+	// Check all inputs
+	if(!checkVal(req.body.name, "^[a-zA-Z ]{0,100}$")) return res.send("fail");
+	if(!checkVal(req.body.contact, "^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$")) return res.send("fail");
+	if(!checkVal(req.body.type)) return res.send("fail");
+	if(!checkVal(req.body.desc, "^.{0,500}$")) return res.send("fail");
+
+
+	
+	// Create query
+	var tmp = 'INSERT INTO help (name, email, purpose, description, ip_addr) VALUES (';
+
+	tmp += "\"" + req.body.name + "\", ";
+	tmp += "\"" + req.body.contact + "\", ";
+	tmp += "\"" + req.body.type + "\", ";
+	tmp += "\"" + req.body.desc + "\", ";
+	tmp += "\"" + req.connection.remoteAddress + "\");";
+	
+    
+	req.emjdb.query( tmp, function(err) {
+
+		console.log(err);
+
+		if(err){
+			return res.send("fail");
+		}
+
+		return res.send("success");
+
+	});
+	
+});
+
+
+// Register a request
+router.post('/request', function(req, res, next) {
 
 	// Check all inputs
 	if(!checkVal(req.body.name, "^[a-zA-Z ]{0,100}$")) return res.send("fail");
